@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class AnimalList extends Component {
   render() {
     return (
-        <React.Fragment>
+        <section className="contact">
         {
             this.props.animals.map(animal => 
                 <section key = {animal.id}>
@@ -12,7 +12,7 @@ export default class AnimalList extends Component {
                 </section>
                 )
         }
-        </React.Fragment>
+        </section>
     )
   }
 }

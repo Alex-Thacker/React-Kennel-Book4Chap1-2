@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class LocationList extends Component {
   render() {
     return (
-      <React.Fragment>
+      <section className="contact">
         <h1>Our Locations</h1>
         
           {
@@ -15,7 +15,7 @@ export default class LocationList extends Component {
         )
           }
       
-      </React.Fragment>
+      </section>
     )
   }
 }

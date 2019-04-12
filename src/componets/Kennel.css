@@ -3,3 +3,7 @@
     justify-content: space-around;
     flex-direction: row;
 }
+
+.contact {
+    padding-top: 50px;
+}
