@@ -32,6 +32,19 @@ export default class ApplicationViews extends Component {
             .then(() => this.setState(newState))
     }
 
+    deleteItem = (resource, id) => {
+        return fetch(`http://localhost:5002/${resource}/${id}`, {
+            method: "DELETE"
+        })
+        .then(e => e.json())
+        .then(() => fetch(`http://localhost:5002/${resource}`))
+        .then(e => e.json())
+        .then(obj => this.setState({
+            [resource]: obj
+        })
+      )
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -39,13 +52,13 @@ export default class ApplicationViews extends Component {
                     return <LocationList locations={this.state.locations} />
                 }} />
                 <Route path="/animals" render={(props) => {
-                    return <AnimalList animals={this.state.animals} />
+                    return <AnimalList animals={this.state.animals} deleteItem={this.deleteItem} />
                 }} />
                 <Route path="/employees" render={(props) => {
-                    return <EmployeeList employees={this.state.employees} />
+                    return <EmployeeList employees={this.state.employees} deleteItem={this.deleteItem} />
                 }} />
                 <Route path="/owners" render={(props) => {
-                    return <Owners owners={this.state.owners} />
+                    return <Owners owners={this.state.owners} deleteItem={this.deleteItem} />
                 }} />
             </React.Fragment>
         )

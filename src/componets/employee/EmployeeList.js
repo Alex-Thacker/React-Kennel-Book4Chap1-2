@@ -26,6 +26,9 @@ class EmployeeList extends Component {
                     this.props.employees.map(employee =>
                         <div key={employee.id}>
                             {employee.name}
+                            <button
+                                onClick={() => this.props.deleteItem("employees", employee.id)}
+                                className="card-link">Delete</button>
                         </div>
                     )
                 }
