@@ -4,6 +4,10 @@ import AnimalList from './animals/AnimalList'
 import LocationList from './location/LocationList'
 import EmployeeList from './employee/EmployeeList'
 import Owners from "./owners/Owners"
+import AnimalManager from "../modules/AnimalManager"
+import LocationManager from "../modules/LocationManager"
+import EmployeeManager from "../modules/EmployeeManager"
+import OwnerManager from "../modules/OwnerManager"
 
 
 export default class ApplicationViews extends Component {
@@ -17,20 +21,17 @@ export default class ApplicationViews extends Component {
     componentDidMount() {
         const newState = {}
 
-        fetch("http://localhost:5002/animals")
-            .then(r => r.json())
+        AnimalManager.getAll()
             .then(animals => newState.animals = animals)
-            .then(() => fetch("http://localhost:5002/employees")
-            .then(r => r.json()))
+        EmployeeManager.getAll()
             .then(employees => newState.employees = employees)
-            .then(() => fetch("http://localhost:5002/locations"))
-            .then(r => r.json())
+        LocationManager.getAll()
             .then(locations => newState.locations = locations)
-            .then(() => fetch("http://localhost:5002/owners"))
-            .then(r => r.json())
+        OwnerManager.getAll()
             .then(owners => newState.owners = owners)
             .then(() => this.setState(newState))
     }
+    
 
     deleteItem = (resource, id) => {
         return fetch(`http://localhost:5002/${resource}/${id}`, {
