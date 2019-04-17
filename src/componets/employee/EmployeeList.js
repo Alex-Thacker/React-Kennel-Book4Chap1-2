@@ -16,6 +16,7 @@
 // }
 
 import React, { Component } from 'react'
+import { Link } from "react-router-dom"
 
 
 class EmployeeList extends Component {
@@ -29,6 +30,7 @@ class EmployeeList extends Component {
                             <button
                                 onClick={() => this.props.deleteItem("employees", employee.id)}
                                 className="card-link">Delete</button>
+                            <Link to={`/employees/${employee.id}`}>Detail</Link>
                         </div>
                     )
                 }
