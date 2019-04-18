@@ -31,9 +31,11 @@ class EmployeeList extends Component {
                                 onClick={() => this.props.deleteItem("employees", employee.id)}
                                 className="card-link">Delete</button>
                             <Link to={`/employees/${employee.id}`}>Detail</Link>
+
                         </div>
                     )
                 }
+                <button onClick={() => this.props.history.push("/employees/new")}>Add New</button>
             </section>
         )
     }

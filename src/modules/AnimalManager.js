@@ -12,5 +12,14 @@ export default {
         method: "DELETE"
     })
     .then(e => e.json())
+  },
+  postItem(resource, object) {
+    return fetch(`${remoteURL}/${resource}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(object)
+    }).then(data => data.json())
   }
 }

@@ -11,17 +11,18 @@ export default class Owners extends Component {
             <div key={owner.id} className="card">
               <div className="card-body">
                 <h4>{owner.name}</h4>
-                <h5 className="card-title">{owner.phoneNumber} 
-                <img src={nic} className="icon--dog" alt="dog icon" />
-                  <button
-                    onClick={() => this.props.deleteItem("owners", owner.id)}
-                    className="card-link">Delete</button></h5>
+                <h5 className="card-title">
+                  {owner.phoneNumber}
+                  <img src={nic} className="icon--dog" alt="dog icon" />
+                  <button onClick={() => this.props.deleteItem("owners", owner.id)} className="card-link">Delete</button>
+
+                </h5>
 
               </div>
             </div>
           )
         }
-
+        <button onClick={() => this.props.history.push("/owners/new")}>Add New</button>
       </section>
     )
   }

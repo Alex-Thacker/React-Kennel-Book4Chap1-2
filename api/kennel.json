@@ -11,6 +11,10 @@
     {
       "id": 3,
       "name": "wiggy diggy doggy figgy"
+    },
+    {
+      "name": "Miss yoyo foshoho",
+      "id": 4
     }
   ],
   "locations": [
@@ -71,6 +75,16 @@
       "id": 4,
       "phoneNumber": "555-888-8888",
       "name": "GreenMan"
+    },
+    {
+      "phoneNumber": "555-666-2222",
+      "name": "peepeeChoHoYoYo",
+      "id": 5
+    },
+    {
+      "phoneNumber": "5555555555555",
+      "name": "NewOwnerIzzy",
+      "id": 6
     }
   ]
 }
