@@ -2,19 +2,23 @@
   "employees": [
     {
       "id": 1,
-      "name": "captain know it all yo"
+      "name": "captain know it all yo",
+      "locationId": 1
     },
     {
       "id": 2,
-      "name": "Jordan Nelson"
+      "name": "Jordan Nelson",
+      "locationId": 1
     },
     {
       "id": 3,
-      "name": "wiggy diggy doggy figgy"
+      "name": "wiggy diggy doggy figgy",
+      "locationId": 1
     },
     {
       "name": "Miss yoyo foshoho",
-      "id": 4
+      "id": 4,
+      "locationId": 2
     }
   ],
   "locations": [

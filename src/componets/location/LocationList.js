@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
+import EmployeeCard from "../employee/EmployeeCard"
 
 export default class LocationList extends Component {
   render() {
@@ -14,6 +15,11 @@ export default class LocationList extends Component {
               <h5>{location.address}</h5>
               <button onClick={() => this.props.deleteItem("locations", location.id)}>Delete</button>
               <Link to={`/locations/${location.id}`}>Detail</Link>
+              {
+                this.props.employees
+                .filter(employee => employee.locationId === location.id)
+                .map(employee => <EmployeeCard key={employee.id} employee={employee} /> )
+              }
             </section>
           )
         }
